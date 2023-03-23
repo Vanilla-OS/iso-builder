@@ -1,4 +1,4 @@
-name: VanillaOS orchid
+name: VanillaOS orchid (test live fix)
 
 on:
   workflow_dispatch

@@ -13,14 +13,13 @@ fi
 lb config noauto \
     --architectures "$ARCH" \
     --mode debian \
-    --initramfs none \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
     --archive-areas "main non-free" \
     --parent-archive-areas "main contrib non-free non-free-firmware" \
-    --linux-packages linux-image \
+    --linux-packages "linux-image linux-headers" \
     --linux-flavours "$KERNEL_FLAVORS" \
-    --bootappend-live "boot=live quiet splash username=vanilla" \
+    --bootappend-live "boot=live config quiet splash username=vanilla" \
     --mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
     --mirror-chroot-security "http://snapshot.debian.org/archive/debian-security/20230319T030536Z" \
@@ -42,7 +41,6 @@ lb config noauto \
     --zsync false \
     --security true \
     --updates false \
-    --debian-installer live \
     --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
     --checksums md5 \
     "${@}"
