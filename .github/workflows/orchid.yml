@@ -2,7 +2,7 @@ name: VanillaOS orchid (test live fix)
 
 on:
   workflow_dispatch:
-    branches: [ orchid-live-fix ]
+    branches: [ orchid ]
 
 jobs:
   build:

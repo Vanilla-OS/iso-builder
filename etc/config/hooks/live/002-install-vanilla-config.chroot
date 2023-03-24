@@ -1,7 +1,6 @@
 #!/bin/sh
 # Description: Setup Vanilla utilities
 
-sudo almost enter rw
 
 mkdir -p /etc/skel/.config/autostart
 if [ -f /usr/share/applications/org.vanillaos.FirstSetup.desktop ]; then
