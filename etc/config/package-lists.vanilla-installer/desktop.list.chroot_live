@@ -1,6 +1,8 @@
 live-boot
 live-config
 live-config-systemd
+live-tools
+user-setup
 
 shim-signed
 shim-helpers-amd64-signed
