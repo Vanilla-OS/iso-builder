@@ -36,8 +36,8 @@ lb config noauto \
     --binary-images iso-hybrid \
     --iso-application "$NAME" \
     --iso-volume "$NAME" \
-    --firmware-binary true \
-    --firmware-chroot true \
+    --firmware-binary false \
+    --firmware-chroot false \
     --security true \
     --updates false \
     --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
