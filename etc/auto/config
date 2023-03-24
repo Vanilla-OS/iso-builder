@@ -19,7 +19,7 @@ lb config noauto \
     --parent-archive-areas "main contrib non-free non-free-firmware" \
     --linux-packages "linux-image linux-headers" \
     --linux-flavours "$KERNEL_FLAVORS" \
-    --bootappend-live "boot=live config username=vanilla user-fullname="Bee" quiet splash" \
+    --bootappend-live "boot=live config username=vanilla user-fullname=Bee quiet splash" \
     --mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
     --mirror-chroot-security "http://snapshot.debian.org/archive/debian-security/20230319T030536Z" \
