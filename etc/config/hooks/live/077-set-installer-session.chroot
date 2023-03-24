@@ -1,6 +1,8 @@
 #!/bin/sh
 # Description: Setup Vanilla Installer xsession
 
+useradd -m -G sudo -s /bin/bash vanilla -p '*'
+
 mkdir -p /var/lib/AccountsService/users/
 echo "[User]
 Session=installer" > /var/lib/AccountsService/users/vanilla

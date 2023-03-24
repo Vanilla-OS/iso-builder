@@ -19,5 +19,7 @@ wamerican
 fwupdate
 mokutil
 rsync
+sudo
+locales-all
 
 vanilla-installer
