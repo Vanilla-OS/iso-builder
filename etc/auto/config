@@ -42,6 +42,7 @@ lb config noauto \
     --updates false \
     --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
     --checksums md5 \
+    --clean \
     "${@}"
 
 
