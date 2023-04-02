@@ -5,9 +5,9 @@ set -e
 . ./terraform.conf
 
 if [ "$HWE_KERNEL" = "yes" ]; then
-    KERNEL_FLAVORS="generic-hwe-${BASEVERSION}"
+    KERNEL_FLAVORS="amd64-hwe-${BASEVERSION}"
 else
-    KERNEL_FLAVORS="generic"
+    KERNEL_FLAVORS="amd64"
 fi
 
 lb config noauto \
