@@ -23,5 +23,6 @@ mokutil
 rsync
 sudo
 locales-all
+zstd
 
 vanilla-installer
