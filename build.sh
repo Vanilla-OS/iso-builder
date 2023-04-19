@@ -22,6 +22,9 @@ echo -e "
 # INSTALL VANILLA REPO #
 #----------------------#
 "
+# Install required gnupg2 for apt-key
+apt-get update
+apt-get install -y gnupg2
 
 # Add vanilla sources
 cat > /etc/apt/sources.list.d/vanilla-base.list <<EOF
@@ -44,7 +47,7 @@ echo -e "
 #----------------------#
 "
 apt-get update
-apt-get install -y live-build patch gnupg2 binutils zstd ca-certificates
+apt-get install -y live-build patch binutils zstd ca-certificates
 dpkg -i debs/*.deb
 
 # TODO: workaround a bug in lb by increasing number of blocks for creating efi.img
