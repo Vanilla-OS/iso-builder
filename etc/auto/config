@@ -33,7 +33,7 @@ lb config noauto \
     --apt-recommends false \
     --cache-packages false \
     --uefi-secure-boot enable \
-    --binary-images iso-hybrid \
+    --binary-images iso \
     --iso-application "$NAME" \
     --iso-volume "$NAME" \
     --firmware-binary false \

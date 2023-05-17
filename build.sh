@@ -19,33 +19,17 @@ source "$BASE_DIR"/"$CONFIG_FILE"
 
 echo -e "
 #----------------------#
-# INSTALL VANILLA REPO #
-#----------------------#
-"
-
-# Add vanilla sources
-cat > /etc/apt/sources.list.d/vanilla-base.list <<EOF
-deb [arch=amd64] http://repo.vanillaos.org/ $BASECODENAME main
-EOF
-
-# Add vanilla repo key
-apt-key add "$BASE_DIR"/etc/config/archives/vanilla.key
-apt-key add "$BASE_DIR"/etc/config/archives/vanilla-main.key
-
-# Add vanilla keyring
-cp "$BASE_DIR"/etc/config/includes.chroot/usr/share/keyrings/vanilla_keyring.gpg /usr/share/keyrings/
-
-# Remove stock debian sources
-rm -f /etc/apt/sources.list.d/debian.sources
-
-echo -e "
-#----------------------#
 # INSTALL DEPENDENCIES #
 #----------------------#
 "
 apt-get update
 apt-get install -y live-build gnupg2 binutils zstd ca-certificates
 
+echo -e "
+#----------------------#
+# PREPARE BUILD OUTPUT #
+#----------------------#
+"
 build () {
   BUILD_ARCH="$1"
   mkdir -p "$BASE_DIR/tmp/$BUILD_ARCH"
