@@ -74,7 +74,7 @@ build () {
   OUTPUT_DIR="$BASE_DIR/builds/$BUILD_ARCH"
   mkdir -p "$OUTPUT_DIR"
   FNAME="VanillaOS-$VERSION-$CHANNEL.$YYYYMMDD$OUTPUT_SUFFIX"
-  mv "$BASE_DIR/tmp/$BUILD_ARCH/live-image-$BUILD_ARCH.*.iso" "$OUTPUT_DIR/${FNAME}.iso"
+  mv "$BASE_DIR/tmp/$BUILD_ARCH/live-image-$BUILD_ARCH*.iso" "$OUTPUT_DIR/${FNAME}.iso"
 
   # cd into output to so {FNAME}.sha256.txt only
   # includes the filename and not the path to
