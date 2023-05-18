@@ -34,10 +34,11 @@ gdm3
 xorg
 
 gnome-shell
-gnome-shell-extensions
 gnome-session
 gnome-browser-connector
 gnome-disk-utility
+gnome-control-center
+kgx
 
 epiphany-browser
 xdg-desktop-portal-gnome
