@@ -3,10 +3,11 @@
 ## ISO Builder
 
 <sup2>This ISO builder was basically a combination of previous efforts from Ubuntu
-Budgie (budgie-remix at the time), some stuff from livecd-rootfs from launchpad
+Budgie, some stuff from livecd-rootfs from Launchpad
 and Elementary OS, thanks to the amazing devs from all around!
-Elem Link: https://github.com/elementary/os</sup2>
+Elememtary OS Link: https://github.com/elementary/os</sup2>
 
+ And this is a fork of Vanilla OS, More info at: https://github.com/Vanilla-OS
 ------------
 
 </div>
@@ -29,7 +30,7 @@ The following example uses Docker and assumes you have Docker correctly installe
  1) Clone this project & `cd` into it:
 
     ```
-    git clone https://github.com/Vanilla-OS/os.git && cd os
+    git clone https://github.com/OliDoDEV/Vanillin-OS.git && cd os
     ```
 
  2) Configure the channel in the `etc/terraform.conf` (unstable, all).
