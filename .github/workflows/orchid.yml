@@ -7,8 +7,6 @@ on:
   release:
     types:
       - created
-    branches:
-      - orchid
 
 jobs:
   build:
