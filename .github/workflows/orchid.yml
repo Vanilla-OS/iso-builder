@@ -67,11 +67,7 @@ jobs:
         with:
           file: ${{ github.workspace }}/artifacts/amd64/*
           file_glob: true
-          tag: ${{ github.ref_path }}
-          overwrite: true
-          prerelease: false
-          make_latest: true
-          release_name: ${{ github.ref_path }}
+          tag: ${{ github.ref }}
           body: |
             ${{ steps.get_release_body.outputs.body }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
