@@ -1,8 +1,14 @@
 name: VanillaOS orchid
 
+permissions:
+  contents: write
+
 on:
-  workflow_dispatch:
-    branches: [ orchid ]
+  release:
+    types:
+      - created
+    branches:
+      - orchid
 
 jobs:
   build:
@@ -15,20 +21,52 @@ jobs:
       options: --privileged -it
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: De-bloat stock image
-      run: |
-        rm -r /run/host/usr/share/dotnet
-        rm -r /run/host${{ runner.tool_cache }}
+      - uses: actions/checkout@v3
 
-    - name: Install needed packages
-      run: apt update && apt install debootstrap -y
+      - name: De-bloat stock image
+        run: |
+          rm -r /run/host/usr/share/dotnet
+          rm -r /run/host${{ runner.tool_cache }}
+      - name: Install needed packages
+        run: apt update && apt install debootstrap -y
 
-    - name: Build ISO
-      run: ./build.sh etc/terraform.conf
+      - name: Build ISO
+        run: ./build.sh etc/terraform.conf
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: VanillaOS 2.0
-        path: builds/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: VanillaOS 2.0
+          path: builds/
+
+  release:
+    needs: build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create artifacts directory
+        run: mkdir -p ${{ github.workspace }}/artifacts
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: VanillaOS 2.0
+          path: ${{ github.workspace }}/artifacts
+          
+      - name: Display structure of downloaded files
+        run: ls -R ${{ github.workspace }}/artifacts
+        
+      - name: Upload release artifact
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: ${{ github.workspace }}/artifacts/amd64/*
+          file_glob: true
+          tag: ${{ github.ref }}
+          overwrite: true
+          prerelease: false
+          make_latest: true
+          release_name: ${{ github.ref }}
+          body: |
+            Release artifact for VanillaOS 2.0
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
