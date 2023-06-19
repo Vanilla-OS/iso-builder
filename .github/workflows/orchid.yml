@@ -53,20 +53,25 @@ jobs:
         with:
           name: VanillaOS 2.0
           path: ${{ github.workspace }}/artifacts
-          
+
+      - name: Get existing release body
+        id: get_release_body
+        run: |
+          echo "::set-output name=body::$(curl -s -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/repos/${{ github.repository }}/releases/tags/${{ github.ref_path }} | jq -r '.body')"
+
       - name: Display structure of downloaded files
         run: ls -R ${{ github.workspace }}/artifacts
-        
+
       - name: Upload release artifact
         uses: svenstaro/upload-release-action@v2
         with:
           file: ${{ github.workspace }}/artifacts/amd64/*
           file_glob: true
-          tag: ${{ github.ref }}
+          tag: ${{ github.ref_path }}
           overwrite: true
           prerelease: false
           make_latest: true
-          release_name: ${{ github.ref }}
+          release_name: ${{ github.ref_path }}
           body: |
-            Release artifact for VanillaOS 2.0
+            ${{ steps.get_release_body.outputs.body }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
