@@ -12,11 +12,18 @@ label live-@FLAVOUR@
 	append @APPEND_LIVE@
 
 label live-failsafe
-	menu label Start Vanilla OS (Safe Graphics)
+	menu label Start Vanilla OS (Safe Graphics with nomodeset)
 	set gfxpayload=keep
 	linux @LINUX@
 	initrd @INITRD@
 	append @APPEND_LIVE@ nomodeset
+
+label live-failsafe-alternative
+	menu label Start Vanilla OS (Safe Graphics with nouveau.modeset=0)
+	set gfxpayload=keep
+	linux @LINUX@
+	initrd @INITRD@
+	append @APPEND_LIVE@ nouveau.modeset=0
 
 label hd
 	menu label ^Boot from next volume
