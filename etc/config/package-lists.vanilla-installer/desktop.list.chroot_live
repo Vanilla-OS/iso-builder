@@ -10,6 +10,13 @@ cryptsetup
 shim-signed
 shim-helpers-amd64-signed
 
+firmware-linux
+firmware-linux-nonfree
+firmware-linux-free
+firmware-iwlwifi
+firmware-realtek
+firmware-atheros
+
 ca-certificates
 btrfs-progs
 expect
@@ -29,6 +36,7 @@ zstd
 
 vanilla-installer
 vanilla-backgrounds
+vanilla-gnome-default-settings
 
 gdm3
 xorg
