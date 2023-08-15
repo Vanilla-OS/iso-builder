@@ -26,8 +26,8 @@ lb config noauto \
     --parent-mirror-chroot-security "http://deb.debian.org/debian-security" \
     --mirror-binary-security "http://deb.debian.org/debian-security" \
     --parent-mirror-binary-security "http://deb.debian.org/debian-security" \
-    --mirror-binary "https://repo.vanillaos.org" \
-    --parent-mirror-binary "https://repo.vanillaos.org" \
+    --mirror-binary "https://repo2.vanillaos.org" \
+    --parent-mirror-binary "https://repo2.vanillaos.org" \
     --keyring-packages debian-keyring \
     --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
     --apt-recommends false \
