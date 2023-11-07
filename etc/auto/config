@@ -47,6 +47,7 @@ lb config noauto \
     --checksums md5 \
     --clean \
     --debootstrap-options "--keyring=/usr/share/keyrings/vanilla_keyring.gpg" \
+    --bootloaders "grub-efi"
     "${@}"
 
 
