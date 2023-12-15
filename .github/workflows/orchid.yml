@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: ghcr.io/vanilla-os/pico:main
       volumes:
@@ -27,7 +27,7 @@ jobs:
     - name: Build ISO
       run: ./build.sh etc/terraform.conf
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: VanillaOS 2
         path: builds/
