@@ -22,14 +22,14 @@ It's better to get something not perfect, but close enough.
 
 ## Building Locally
 
-As UCR is built with the Debian version of `live-build`, not the Ubuntu patched version, it's easiest to build an iso in a Debian VM or container. This prevents messing up your host system too.
+As UCR is built with the Debian version of `live-build`, not the Ubuntu patched version, it's easiest to build an iso in a vanilla-pico VM or container. This prevents messing up your host system too.
 
 The following example uses Docker and assumes you have Docker correctly installed and set up:
 
  1) Clone this project & `cd` into it:
 
     ```
-    git clone https://github.com/Vanilla-OS/os.git && cd os
+    git clone https://github.com/Vanilla-OS/live-iso.git && cd live-iso
     ```
 
  2) Configure the channel in the `etc/terraform.conf` (unstable, all).
@@ -40,7 +40,7 @@ The following example uses Docker and assumes you have Docker correctly installe
     docker run --privileged -i -v /proc:/proc \
         -v ${PWD}:/working_dir \
         -w /working_dir \
-        debian:sid \
+        ghcr.io/vanilla-os/pico:main \
         /bin/bash -s etc/terraform.conf < build.sh
     ```
 
