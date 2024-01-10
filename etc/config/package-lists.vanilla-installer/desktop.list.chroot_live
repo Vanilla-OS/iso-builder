@@ -97,3 +97,8 @@ plymouth-theme-vanilla
 plymouth-theme-vanilla-bgrt
 plymouth-theme-vanilla-logo
 plymouth-theme-vanilla-text
+
+open-vm-tools
+open-vm-tools-desktop
+virtualbox-guest-utils
+virtualbox-guest-x11
