@@ -2,5 +2,7 @@
 cat > /usr/share/glib-2.0/schemas/90-vanilla-os-lock.gschema.override <<EOF
 [org.gnome.desktop.screensaver]
 lock-enabled=false
+[org.gnome.desktop.lockdown]
+disable-lock-screen=true
 EOF
 glib-compile-schemas /usr/share/glib-2.0/schemas/
