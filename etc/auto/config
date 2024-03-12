@@ -17,7 +17,7 @@ lb config noauto \
     --parent-distribution "$BASECODENAME" \
     --linux-packages "linux-image linux-headers" \
     --linux-flavours "$KERNEL_FLAVORS" \
-    --bootappend-live "boot=live config username=vanilla user-fullname=Vanilla quiet splash" \
+    --bootappend-live "boot=live config username=vanilla user-fullname=Vanilla quiet splash bgrt_disable" \
     \
     --parent-archive-areas "main contrib non-free non-free-firmare" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
