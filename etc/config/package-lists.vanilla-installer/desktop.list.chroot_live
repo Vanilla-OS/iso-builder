@@ -39,6 +39,7 @@ rsync
 sudo
 locales
 zstd
+ntpsec
 
 gdm3
 xorg
