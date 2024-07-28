@@ -55,6 +55,12 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: Vanilla OS 2 Orchid
+    
+    - name: List files
+      run: |
+        ls -la
+        ls -la Vanilla OS 2 Orchid/
+        ls -la builds/
 
     - name: Create Release
       env:
